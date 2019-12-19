@@ -1,6 +1,21 @@
 import React from 'react'
 import Head from 'next/head'
 import Nav from '../components/nav'
+import styled from 'styled-components';
+
+const Header = styled.div`
+  background-image: url('/header.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 100px;
+  display: flex;
+  align-items: center;
+  color: #fdfefe;
+  font-size: 30px;
+  font-family: "Verdana";
+  padding: 20px;
+`
+
 
 const Home = () => (
   <div>
@@ -8,6 +23,9 @@ const Home = () => (
       <title>Home</title>
       <link rel="icon" href="/favicon.ico" />
     </Head>
+    <Header>
+      <p>LH Boatbuilders</p>
+    </Header>
 
     <Nav />
 
