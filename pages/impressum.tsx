@@ -3,46 +3,82 @@ import Head from "next/head";
 import Nav from "../components/nav";
 import styled from "styled-components";
 import { Normalize } from "styled-normalize";
+import Link from "next/link";
 
 const Header = styled.div`
   background-image: url("/header.jpg");
   background-size: cover;
   background-position: center;
   min-height: 100px;
-  display: flex;
+  display: grid;
   align-items: center;
   color: #fdfefe;
   font-size: 30px;
   font-family: "Verdana";
+`;
+
+const Title = styled.h1`
+  color: #ecf0f1;
+  font-size: 30px;
+  font-family: "Verdana";
+  font-weight: lighter;
+  text-decoration: none;
   padding: 20px;
 `;
 
-const ImpressumContent = styled.div``;
+const ImpressumContent = styled.div`
+  font-family: "Verdana";
+  padding: 20px;
+  background-color: #ecf0f1;
+  background-size: 100%;
+
+  h3 {
+    font-size: 15px;
+    padding-top: 20px;
+  }
+
+  p {
+    font-size: 12px;
+  }
+`;
 
 const Footer = styled.div`
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-columns: max-content auto min-content;
+  grid-gap: 50px;
+  padding: 20px;
   background-image: url("/header.jpg");
   background-size: cover;
   background-position: bottom;
-  min-height: 100px;
-  align-self: baseline;
-  align-items: column;
   font-family: "Verdana";
-  color: #fdfefe;
+  font-weight: normal;
+  color: #ecf0f1;
 `;
-const Contact = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 0px 100px 0px 20px;
+// TODO Fonts über "GlobalStyles"
+
+const FooterHeadline = styled.h3`
+  margin-top: 0px;
   font-size: 15px;
 `;
-const OpeningHours = styled.div`
-  flex-direction: row;
-  display: flex;
-  align-items: column;
+
+const FooterContent = styled.div`
+  align-items: row;
   font-size: 15px;
-  justify-content: space-between;
+`;
+
+const ImpressumLink = styled.a`
+  text-decoration: none;
+  color: #ecf0f1;
+  &:hover {
+    transition: 0, 5s;
+    color: #7f8c8d;
+  }
+`;
+
+const Times = styled.div`
+  display: grid;
+  grid-template-columns: max-content max-content;
+  grid-gap: 12px;
 `;
 
 const Home = () => (
@@ -54,8 +90,9 @@ const Home = () => (
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header>
-        <p>LH Boatbuilders</p>
-        <link rel="stylesheet" href="/index.ts" />
+        <Link href="/">
+          <Title>LH Boatbuilders</Title>
+        </Link>
       </Header>
 
       <ImpressumContent>
@@ -72,7 +109,6 @@ const Home = () => (
           Die Europäische Kommission stellt eine Plattform zur
           Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr
         </p>
-        <p>Unsere E-Mail-Adresse finden Sie oben im Impressum</p>
         <p>
           Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren
           vor einer Verbraucherschlichtungsstelle teilzunehmen.
@@ -130,25 +166,22 @@ const Home = () => (
       </ImpressumContent>
 
       <Footer>
-        <Contact>
+        <FooterContent>
+          <FooterHeadline>Adresse</FooterHeadline>
           <p>Adresse folgt</p>
-          <p>Telefonnummer</p>
-        </Contact>
-        <OpeningHours>
-          <div>
-            <p>Öffnungszeiten</p>
-            <p>Montag bis Freitag:</p>
-            <p>Samstag</p>
-            <p>Sonntag:</p>
-          </div>
-          <div>
-            <br />
-            <br />
-            <p>10:00 - 18:00 Uhr</p>
-            <p>10:00 - 14:00 Uhr</p>
-            <p>geschlossen</p>
-          </div>
-        </OpeningHours>
+        </FooterContent>
+        <FooterContent>
+          <FooterHeadline>Öffnungszeiten</FooterHeadline>
+          <Times>
+            <span>Montag bis Freitag: </span>
+            <span>10:00 - 18:00 Uhr</span>
+            <span>Samstag: </span>
+            <span>10:00 - 14:00 Uhr</span>
+          </Times>
+        </FooterContent>
+        <ImpressumLink href="/impressum">
+          <a>Impressum</a>
+        </ImpressumLink>
       </Footer>
     </div>
   </>
