@@ -1,11 +1,11 @@
-import React from 'react'
-import Head from 'next/head'
-import Nav from '../components/nav'
-import styled from 'styled-components';
-import {Normalize} from 'styled-normalize'
+import React from "react";
+import Head from "next/head";
+import Nav from "../components/nav";
+import styled from "styled-components";
+import { Normalize } from "styled-normalize";
 
 const Header = styled.div`
-  background-image: url('/header.jpg');
+  background-image: url("/header.jpg");
   background-size: cover;
   background-position: center;
   min-height: 100px;
@@ -15,105 +15,143 @@ const Header = styled.div`
   font-size: 30px;
   font-family: "Verdana";
   padding: 20px;
-`
-const Welcome = styled.div`
-  display: flex;
-  align-items: center;
-  align-content: center;
-  flex-direction: column;
-  margin: 230px;
-  font-family: "Verdana";
-`
+`;
+
+const ImpressumContent = styled.div``;
 
 const Footer = styled.div`
   display: flex;
   flex-direction: row;
-  background-image: url('/header.jpg');
+  background-image: url("/header.jpg");
   background-size: cover;
   background-position: bottom;
   min-height: 100px;
-  align-self: baseline; 
+  align-self: baseline;
   align-items: column;
   font-family: "Verdana";
   color: #fdfefe;
-
-`
+`;
 const Contact = styled.div`
   display: flex;
   flex-direction: column;
-  padding:   0px 100px 0px 20px;
+  padding: 0px 100px 0px 20px;
   font-size: 15px;
-`
+`;
 const OpeningHours = styled.div`
   flex-direction: row;
   display: flex;
-  align-items: column;  
+  align-items: column;
   font-size: 15px;
   justify-content: space-between;
-
-`
-
- const NavigationBar = styled.div`
- display: flex;
- flex-direction: row;
- text-align: center;
- padding: 10px;
- background: ;
- `
-
+`;
 
 const Home = () => (
-<>
-<Normalize/>
-  <div>
-    <Head>
-      <title>Home</title>
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
-    <Header>
-      <p>LH Boatbuilders</p>
-      <link rel="stylesheet" href="/index.ts"/>
-    </Header>
-
+  <>
+    <Normalize />
     <div>
-        <NavigationBar>
-            <li>Home</li>
-            <li>About Us</li>
-            <li>References</li>
-            <li>Contact</li>
-        </NavigationBar>
-    </div>
+      <Head>
+        <title>Home</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <Header>
+        <p>LH Boatbuilders</p>
+        <link rel="stylesheet" href="/index.ts" />
+      </Header>
 
-    <Welcome>
-    <h1>Willkommen!</h1>
-      <p>
-        Diese Website befindet sich im Aufbau. 
-      </p> 
-    </Welcome>
+      <ImpressumContent>
+        <h2>Impressum</h2>
+        <h3>Rasmus Lamersdorf Bootsbau</h3>
+        <p>Rasmus Lamersdorf</p>
+        <p>Willebrandstraße 18</p>
+        <p>22767 Hamburg</p>
+        <h3>Kontakt</h3>
+        <p>Telefon: 0174 4344527</p>
+        <p>E-Mail: info@lh-boatbuilders.de</p>
+        <h3>Streitschlichtung</h3>
+        <p>
+          Die Europäische Kommission stellt eine Plattform zur
+          Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr
+        </p>
+        <p>Unsere E-Mail-Adresse finden Sie oben im Impressum</p>
+        <p>
+          Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren
+          vor einer Verbraucherschlichtungsstelle teilzunehmen.
+        </p>
+        <h3>Haftung für Inhalte</h3>
+        <p>
+          Als Diensteanbieter sind wir gemäß § 7 Abs.1 TMG für eigene Inhalte
+          auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach
+          §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht
+          verpflichtet, übermittelte oder gespeicherte fremde Informationen zu
+          überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige
+          Tätigkeit hinweisen.
+        </p>
+        <p>
+          Verpflichtungen zur Entfernung oder Sperrung der Nutzung von
+          Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt.
+          Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der
+          Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden
+          von entsprechenden Rechtsverletzungen werden wir diese Inhalte
+          umgehend entfernen.
+        </p>
+        <h3>Haftung für Links</h3>
+        <p>
+          Unser Angebot enthält Links zu externen Websites Dritter, auf deren
+          Inhalte wir keinen Einfluss haben. Deshalb können wir für diese
+          fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der
+          verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der
+          Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der
+          Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige
+          Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.
+        </p>
+        <p>
+          Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch
+          ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei
+          Bekanntwerden von Rechtsverletzungen werden wir derartige Links
+          umgehend entfernen.
+        </p>
+        <h3>Urheberrecht</h3>
+        <p>
+          Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen
+          Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung,
+          Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der
+          Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des
+          jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite
+          sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+        </p>
+        <p>
+          Soweit die Inhalte auf dieser Seite nicht vom Betreiber erstellt
+          wurden, werden die Urheberrechte Dritter beachtet. Insbesondere werden
+          Inhalte Dritter als solche gekennzeichnet. Sollten Sie trotzdem auf
+          eine Urheberrechtsverletzung aufmerksam werden, bitten wir um einen
+          entsprechenden Hinweis. Bei Bekanntwerden von Rechtsverletzungen
+          werden wir derartige Inhalte umgehend entfernen.
+        </p>
+      </ImpressumContent>
 
-    <Footer>
-      <Contact>
-        <p>Adresse folgt</p>
-        <p>Telefonnummer</p>
-      </Contact>
-      <OpeningHours>
-        <div>
+      <Footer>
+        <Contact>
+          <p>Adresse folgt</p>
+          <p>Telefonnummer</p>
+        </Contact>
+        <OpeningHours>
+          <div>
             <p>Öffnungszeiten</p>
             <p>Montag bis Freitag:</p>
             <p>Samstag</p>
             <p>Sonntag:</p>
-        </div>
-        <div>
-            <br/>
-            <br/>
+          </div>
+          <div>
+            <br />
+            <br />
             <p>10:00 - 18:00 Uhr</p>
             <p>10:00 - 14:00 Uhr</p>
             <p>geschlossen</p>
-        </div>
-      </OpeningHours>
-    </Footer>
-  </div>
+          </div>
+        </OpeningHours>
+      </Footer>
+    </div>
   </>
-)
+);
 
-export default Home
+export default Home;
