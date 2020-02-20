@@ -4,19 +4,30 @@ import Nav from "../components/nav";
 import styled from "styled-components";
 import { Normalize } from "styled-normalize";
 import { NextPage } from "next";
+import Link from "next/link";
 
 const Header = styled.div`
   background-image: url("/header.jpg");
   background-size: cover;
   background-position: center;
-  min-height: 100px;
-  display: flex;
+  min-height: 130px;
+  display: grid;
   align-items: center;
-  color: #fdfefe;
+`;
+
+const Title = styled.h1`
+  color: #ecf0f1;
   font-size: 30px;
   font-family: "Verdana";
+  font-weight: lighter;
+  text-decoration: none;
   padding: 20px;
 `;
+
+const Body = styled.body`
+  color: #2c3e50;
+`;
+
 const Welcome = styled.div`
   display: flex;
   align-items: center;
@@ -24,32 +35,46 @@ const Welcome = styled.div`
   flex-direction: column;
   margin: 230px;
   font-family: "Verdana";
+  color: #2c3e50;
 `;
 
 const Footer = styled.div`
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: max-content auto min-content;
+  grid-gap: 50px;
+  padding: 20px;
   background-image: url("/header.jpg");
   background-size: cover;
   background-position: bottom;
-  min-height: 100px;
   font-family: "Verdana";
-  color: #fdfefe;
+  font-weight: normal;
+  color: #ecf0f1;
 `;
 // TODO Fonts über "GlobalStyles"
-const Contact = styled.div`
-  align-items: row;
-  padding: 0px 100px 0px 20px;
+
+const FooterHeadline = styled.h3`
+  margin-top: 0px;
   font-size: 15px;
 `;
-const OpeningHours = styled.div`
+
+const FooterContent = styled.div`
   align-items: row;
   font-size: 15px;
 `;
 
+const ImpressumLink = styled.a`
+  text-decoration: none;
+  color: #ecf0f1;
+  &:hover {
+    transition: 0, 5s;
+    color: #7f8c8d;
+  }
+`;
+
 const Times = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: max-content max-content;
+  grid-gap: 12px;
 `;
 const NavigationBar = styled.div``;
 
@@ -62,29 +87,33 @@ const Home: NextPage = props => (
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header>
-        <p>LH Boatbuilders</p>
-        <link rel="stylesheet" href="/index.ts" />
+        <ImpressumLink href="/">
+          <Title>LH Boatbuilders</Title>
+        </ImpressumLink>
       </Header>
 
       <Welcome>
-        <h1 className="title">Willkommen</h1>
-        <p className="description">Diese Website befindet sich im Aufbau.</p>
+        <h2>Willkommen</h2>
+        <p>Diese Website befindet sich im Aufbau.</p>
       </Welcome>
 
       <Footer>
-        <Contact>
+        <FooterContent>
+          <FooterHeadline>Adresse</FooterHeadline>
           <p>Adresse folgt</p>
-          <p>Telefonnummer</p>
-        </Contact>
-        <OpeningHours>
-          <p>Öffnungszeiten</p>
+        </FooterContent>
+        <FooterContent>
+          <FooterHeadline>Öffnungszeiten</FooterHeadline>
           <Times>
-            <p>Montag bis Freitag: </p>
-            <p>10:00 - 18:00 Uhr</p>
-            <p>Sonntag: </p>
-            <p>10:00 - 14:00 Uhr</p>
+            <span>Montag bis Freitag: </span>
+            <span>10:00 - 18:00 Uhr</span>
+            <span>Samstag: </span>
+            <span>10:00 - 14:00 Uhr</span>
           </Times>
-        </OpeningHours>
+        </FooterContent>
+        <ImpressumLink href="/impressum">
+          <a>Impressum</a>
+        </ImpressumLink>
       </Footer>
     </div>
   </>
