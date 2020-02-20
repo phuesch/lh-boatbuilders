@@ -24,18 +24,16 @@ const Title = styled.h1`
   padding: 20px;
 `;
 
-const Body = styled.body`
-  color: #2c3e50;
-`;
-
 const Welcome = styled.div`
   display: flex;
   align-items: center;
   align-content: center;
   flex-direction: column;
-  margin: 230px;
+  padding: 230px;
   font-family: "Verdana";
   color: #2c3e50;
+  background-color: #ecf0f1;
+  background-size: 100%;
 `;
 
 const Footer = styled.div`
@@ -76,7 +74,6 @@ const Times = styled.div`
   grid-template-columns: max-content max-content;
   grid-gap: 12px;
 `;
-const NavigationBar = styled.div``;
 
 const Home: NextPage = props => (
   <>
@@ -87,9 +84,9 @@ const Home: NextPage = props => (
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header>
-        <ImpressumLink href="/">
+        <Link href="/">
           <Title>LH Boatbuilders</Title>
-        </ImpressumLink>
+        </Link>
       </Header>
 
       <Welcome>
