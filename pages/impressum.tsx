@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import Nav from "../components/nav";
 import styled from "styled-components";
 import { Normalize } from "styled-normalize";
 import Link from "next/link";
@@ -28,9 +27,11 @@ const Title = styled.h1`
 
 const ImpressumContent = styled.div`
   font-family: "Verdana";
+  color: #2c3e50;
   padding: 20px;
   background-color: #ecf0f1;
   background-size: 100%;
+  line-height: 1.5;
 
   h3 {
     font-size: 15px;
@@ -40,39 +41,33 @@ const ImpressumContent = styled.div`
   p {
     font-size: 12px;
   }
+
+  a {
+    color: #2c3e50;
+  }
 `;
 
 const Footer = styled.div`
   display: grid;
   grid-template-columns: max-content auto min-content;
-  grid-gap: 50px;
+  grid-gap: 100px;
   padding: 20px;
   background-image: url("/header.jpg");
   background-size: cover;
   background-position: bottom;
   font-family: "Verdana";
   font-weight: normal;
+  font-size: 12px;
   color: #ecf0f1;
 `;
 // TODO Fonts über "GlobalStyles"
 
 const FooterHeadline = styled.h3`
   margin-top: 0px;
-  font-size: 15px;
 `;
 
 const FooterContent = styled.div`
   align-items: row;
-  font-size: 15px;
-`;
-
-const ImpressumLink = styled.a`
-  text-decoration: none;
-  color: #ecf0f1;
-  &:hover {
-    transition: 0, 5s;
-    color: #7f8c8d;
-  }
 `;
 
 const Times = styled.div`
@@ -90,7 +85,7 @@ const Home = () => (
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header>
-        <Link href="/">
+        <Link href="/index">
           <Title>LH Boatbuilders</Title>
         </Link>
       </Header>
@@ -102,12 +97,20 @@ const Home = () => (
         <p>Willebrandstraße 18</p>
         <p>22767 Hamburg</p>
         <h3>Kontakt</h3>
-        <p>Telefon: 0174 4344527</p>
-        <p>E-Mail: info@lh-boatbuilders.de</p>
+        <p>
+          Telefon: <a href="tel:+491744344527">0174 4344527</a>
+        </p>
+        <p>
+          E-Mail:{" "}
+          <a href="mailto:info@lh-boatbuilders.de">info@lh-boatbuilders.de</a>
+        </p>
         <h3>Streitschlichtung</h3>
         <p>
           Die Europäische Kommission stellt eine Plattform zur
-          Online-Streitbeilegung (OS) bereit: https://ec.europa.eu/consumers/odr
+          Online-Streitbeilegung (OS) bereit:{" "}
+          <a href="https://ec.europa.eu/consumers/odr" target="tab">
+            https://ec.europa.eu/consumers/odr
+          </a>
         </p>
         <p>
           Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren
@@ -179,9 +182,6 @@ const Home = () => (
             <span>10:00 - 14:00 Uhr</span>
           </Times>
         </FooterContent>
-        <ImpressumLink href="/impressum">
-          <a>Impressum</a>
-        </ImpressumLink>
       </Footer>
     </div>
   </>
