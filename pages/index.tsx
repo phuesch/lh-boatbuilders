@@ -1,6 +1,5 @@
 import React from "react";
 import Head from "next/head";
-import Nav from "../components/nav";
 import styled from "styled-components";
 import { Normalize } from "styled-normalize";
 import { NextPage } from "next";
@@ -39,25 +38,31 @@ const Welcome = styled.div`
 const Footer = styled.div`
   display: grid;
   grid-template-columns: max-content auto min-content;
-  grid-gap: 50px;
+  grid-gap: 100px;
   padding: 20px;
   background-image: url("/header.jpg");
   background-size: cover;
   background-position: bottom;
   font-family: "Verdana";
   font-weight: normal;
+  font-size: 12px;
   color: #ecf0f1;
 `;
 // TODO Fonts über "GlobalStyles"
 
 const FooterHeadline = styled.h3`
   margin-top: 0px;
-  font-size: 15px;
 `;
 
 const FooterContent = styled.div`
   align-items: row;
-  font-size: 15px;
+  a {
+    color: #ecf0f1;
+    &:hover {
+      transition: 0, 5s;
+      color: #7f8c8d;
+    }
+  }
 `;
 
 const ImpressumLink = styled.a`
@@ -96,8 +101,13 @@ const Home: NextPage = props => (
 
       <Footer>
         <FooterContent>
-          <FooterHeadline>Adresse</FooterHeadline>
-          <p>Adresse folgt</p>
+          <FooterHeadline>Kontakt</FooterHeadline>
+          <p>Rasmus Lamersdorf</p>
+          <p>Willebrandstraße 18</p>
+          <p>22767 Hamburg</p>
+          <p>
+            Tel.: <a href="tel:+491744344527">0174 4344527</a>
+          </p>
         </FooterContent>
         <FooterContent>
           <FooterHeadline>Öffnungszeiten</FooterHeadline>
