@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Normalize } from "styled-normalize";
 import { NextPage } from "next";
 import Link from "next/link";
+import { Appear } from "../components/appear";
 
 const Header = styled.div`
   background-image: url("/header.jpg");
@@ -21,6 +22,18 @@ const Title = styled.h1`
   font-weight: lighter;
   text-decoration: none;
   padding: 20px;
+`;
+
+const NavigationBar = styled.div`
+  display: grid;
+  box-sizing: inherit;
+  padding: 20px;
+
+  span {
+    position: relative;
+    width: 90%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 `;
 
 const Welcome = styled.div`
@@ -94,10 +107,15 @@ const Home: NextPage = props => (
         </Link>
       </Header>
 
-      <Welcome>
-        <h2>Willkommen</h2>
-        <p>Diese Website befindet sich im Aufbau.</p>
-      </Welcome>
+      <NavigationBar>Option 1</NavigationBar>
+      <NavigationBar>Option </NavigationBar>
+
+      <Appear>
+        <Welcome>
+          <h2>Willkommen</h2>
+          <p>Diese Website befindet sich im Aufbau.</p>
+        </Welcome>
+      </Appear>
 
       <Footer>
         <FooterContent>
